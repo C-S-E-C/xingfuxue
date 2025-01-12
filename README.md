@@ -23,9 +23,9 @@ and
     <title>CSEC</title>
 </head>
 <body>
-    <h1>图片示例</h1>
+    <h1>CSEC</h1>
     <!-- 插入图片 -->
-    <img src=""C:\Users\杨金达\Downloads\csec.png"" alt="图片描述" width="500" height="300">
+    <img src=""https://csec.top/logo2.png"" alt="图片描述" width="500" height="300">
     <!-- 替换图片的路径或URL -->
     <p>这是一个插入的图片示例。</p>
 </body>
