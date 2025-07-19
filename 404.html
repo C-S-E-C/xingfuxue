@@ -1,57 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Not Found</title>
-     <title>页面丢失</title>
-    <style>
-        body {
-            font-family: "Courier New", Courier, monospace;
-            text-align: center;
-            background-color: #000;
-            color: #0f0;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        h1 {
-            font-size: 8rem;
-            margin: 0;
-            color: #0f0;
-            text-shadow: 0 0 20px #0f0;
-        }
-        h2 {
-            font-size: 2rem;
-            margin: 10px 0;
-        }
-        p {
-            font-size: 1.2rem;
-            margin: 20px 0;
-        }
-        a {
-            color: #0f0;
-            text-decoration: none;
-            font-weight: bold;
-            background-color: rgba(0, 255, 0, 0.1);
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s, text-shadow 0.3s;
-        }
-        a:hover {
-            background-color: rgba(0, 255, 0, 0.3);
-            text-shadow: 0 0 10px #0f0;
-        }
-    </style>
+    <title>页面未找到 | 幸福学 - 杨振昆教授</title>
+    <meta name="description" content="页面未找到，返回幸福学网站首页">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/404.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/text-fix.css">
 </head>
-<body>
-    <h1>404</h1>
-    <h2>Page Not Found</h2>
-    <p>ERROR: The resource you are seeking cannot be located.</p>
-    <p><a href="/">Return to mainframe</a></p>
+<body class="error-page">
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="切换主题">
+        <span class="sun-icon">☀️</span>
+        <span class="moon-icon">🌙</span>
+    </button>
+
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">跳转到主要内容</a>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <h1 class="brand-text">
+                        <span class="brand-main">Xingfu</span>
+                        <span class="brand-accent">XUE</span>
+                    </h1>
+                </a>
+            </div>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="services.html" class="nav-link">更多文章</a>
+                </li>
+                <li class="nav-item">
+                    <a href="gallery.html" class="nav-link">介绍</a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact.html" class="nav-link">联系方式</a>
+                </li>
+            </ul>
+
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <section class="error-content">
+            <div class="container">
+                <div class="error-number">404</div>
+                <h1 class="error-title">页面未找到</h1>
+                <p class="error-description">
+                    抱歉，您访问的页面不存在。可能是链接错误或页面已被移动。
+                    让我们帮您找到正确的方向，继续探索幸福学的智慧。
+                </p>
+                
+                <div class="error-quote">
+                    <blockquote>
+                        "人生就像迷路一样，有时候走错路反而能发现更美的风景。
+                        重要的不是从未迷路，而是知道如何重新找到方向。
+                        在幸福学的研究中，我发现每一次迷茫都是成长的机会，
+                        每一次重新开始都是通向幸福的新路径。"
+                    </blockquote>
+                    <cite>— 杨振昆教授</cite>
+                </div>
+                
+                <div class="error-suggestions">
+                    <h3>您可以尝试：</h3>
+                    <ul>
+                        <li><a href="index.html">返回首页</a> - 重新开始探索幸福学的世界</li>
+                        <li><a href="gallery.html">了解教授</a> - 深入了解杨振昆教授的人生历程</li>
+                        <li><a href="services.html">阅读文章</a> - 浏览学术文章和幸福学著作</li>
+                        <li><a href="contact.html">联系我们</a> - 如果需要帮助请联系我们的团队</li>
+                        <li>检查网址拼写是否正确</li>
+                        <li>使用浏览器的后退按钮返回上一页</li>
+                    </ul>
+                </div>
+                
+                <div class="definition-box">
+                    <strong>幸福学启示：</strong>迷路也是人生的一部分，重要的是如何重新找到方向。正如幸福学所教导的，挫折往往是成长的机会，每一次重新开始都可能带来意想不到的收获。
+                </div>
+                
+                <div class="error-buttons">
+                    <a href="index.html" class="btn btn-primary">返回首页</a>
+                    <a href="javascript:history.back()" class="btn btn-secondary">返回上页</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="images/3.webp" alt="Logo" class="footer-logo-img">
+                        <div>
+                            <h3>Yang Jinda</h3>
+                            <p>探索幸福的真谛</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>联系信息</h4>
+                    <p>📍 地址：不愿透露</p>
+                    <p>📞 电话：137-6491-6498</p>
+                    <p>📧 邮箱：xyktlyyds@gmail.com&ianian.chzhu.space.code@tuta.io</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>CSEC, and 金达图文. "xingfuxue.csec.top." xingfuxue.csec.top, Jinda Yang, Ian Zhu, 6 July 2024, xingfuxue.csec.top/. Accessed 6 July 2024 &nbsp; &nbsp; &nbsp; &nbsp; COPYRIGHT (C) All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

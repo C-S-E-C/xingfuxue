@@ -1,0 +1,83 @@
+/* Emergency text display fixes */
+* {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Ensure all text content is visible */
+p,
+span,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+li,
+blockquote,
+cite {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Fix specific content areas */
+.hero-content,
+.about-content,
+.card-content,
+.article-content,
+.member-info,
+.biography-text,
+.speech-text {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Fix text colors */
+.hero-content p,
+.about-content p,
+.card-content p,
+.article-excerpt,
+.member-description,
+.biography-text p,
+.speech-excerpt p,
+.book-description {
+  color: var(--text-secondary) !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  line-height: 1.7 !important;
+  margin-bottom: 1rem !important;
+}
+
+/* Remove any transforms that might hide content */
+.animate-on-scroll {
+  transform: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Ensure containers don't hide content */
+.container,
+.section,
+.grid,
+.card {
+  overflow: visible !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Fix inline elements */
+span,
+a {
+  display: inline !important;
+}
+
+/* Fix list items */
+li {
+  display: list-item !important;
+}
