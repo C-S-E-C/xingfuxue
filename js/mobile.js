@@ -1,17 +1,25 @@
-const windowInnerWidth  = window.innerWidth;
+const windowInnerWidth = window.innerWidth;
 const windowInnerHeight = window.innerHeight;
 console.log("Window Width: " + windowInnerWidth);
 console.log("Window Height: " + windowInnerHeight);
-let isMobile = false;
-if (windowInnerWidth < windowInnerHeight) {
-    isMobile = true;
-} else {
-    isMobile = isMobile;
+
+// Better mobile detection (you might want to use a more robust method)
+const isMobile = windowInnerHeight > windowInnerHeight;
+
+if (isMobile) {
+    const path = window.location.pathname;
+    const pathParts = path.split("/").filter(part => part.length > 0);
+    
+    // Get the last part
+    const lastPart = pathParts.length > 0 ? pathParts[pathParts.length - 1] : '';
+    
+    // Get all parts except the last
+    const allExceptLast = pathParts.length > 1 ? 
+        pathParts.slice(0, pathParts.length - 1).join("/") + "/" : 
+        "";
+    
+    const newPath = "/" + allExceptLast + "mobile/" + lastPart;
+    
+    console.log("Mobile device detected, redirecting to: " + newPath);
+    window.location.href = newPath;
 }
-var path = window.location.pathname;
-var path = path.split("/");
-var new_path = path[-1];
-path = path[1:-2];
-var new_path = path+"/mobile/"+new_path;
-alert("mobile devices detected,redicting to:"+new_path);
-window.location.href = new_path;
