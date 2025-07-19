@@ -2,8 +2,8 @@ const windowInnerWidth = window.innerWidth;
 const windowInnerHeight = window.innerHeight;
 console.log("Window Width: " + windowInnerWidth);
 console.log("Window Height: " + windowInnerHeight);
-// const isMobile = windowInnerHeight > windowInnerWidth;
-const isMobile = false;
+const isMobile = windowInnerHeight > windowInnerWidth;
+// const isMobile = false;
 if (isMobile) {
     const path = window.location.pathname;
     const pathParts = path.split("/").filter(part => part.length > 0);
