@@ -547,7 +547,9 @@ section {
 .footer-bottom p {
   margin-bottom: var(--spacing-sm);
 }
-
+.footer-bottom a {
+  color: var(--text-light);
+}
 .footer-logo {
   display: flex;
   align-items: center;
