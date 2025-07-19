@@ -2,8 +2,6 @@ const windowInnerWidth = window.innerWidth;
 const windowInnerHeight = window.innerHeight;
 console.log("Window Width: " + windowInnerWidth);
 console.log("Window Height: " + windowInnerHeight);
-
-// Better mobile detection (you might want to use a more robust method)
 const isMobile = windowInnerHeight > windowInnerHeight;
 
 if (isMobile) {
