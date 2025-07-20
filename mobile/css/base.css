@@ -285,10 +285,30 @@ h6 {
 }
 
 .nav-menu {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  background: var(--bg-primary);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-heavy);
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: all var(--transition-normal);
+  gap: var(--spacing-lg);
+  list-style-type: none;
+}
+
+.nav-menu.active {
   display: flex;
-  list-style: none;
-  gap: var(--spacing-2xl); /* Increase gap between nav items */
-  margin-left: var(--spacing-3xl); /* Add left margin to separate from brand */
+  flex-direction: column;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .nav-link {
@@ -325,7 +345,7 @@ h6 {
 }
 
 .nav-toggle {
-  display: none;
+  display: none !important;
   flex-direction: column;
   cursor: pointer;
   gap: 4px;
@@ -337,6 +357,44 @@ h6 {
   background: var(--text-primary);
   transition: all var(--transition-normal);
   border-radius: 2px;
+}
+
+/* Menu Button Styles */
+.menu-btn {
+  display: flex !important;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 3000;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  color: var(--text-white);
+  border: none;
+  box-shadow: var(--shadow-heavy);
+  font-size: 2rem;
+  align-items: center;
+  /* fuck center where is vertical-center */
+  /* oh fuck so center in vertical is line-height? who came up whith this? */
+  line-height: 56px;
+  justify-content: center;
+  cursor: pointer;
+  /* transition: background var(--transition-normal), box-shadow var(--transition-normal); */
+}
+
+.menu-btn:active,
+.menu-btn:focus {
+  background: var(--primary-dark);
+  outline: none;
+}
+
+.menu-btn .menu-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 /* Sections */
@@ -632,64 +690,30 @@ section {
 /* Responsive Design */
 @media (max-width: 768px) {
   .nav-menu {
+    display: none;
+    flex-direction: column;
     position: fixed;
-    top: 100%;
+    top: 0;
     left: 0;
     width: 100%;
     background: var(--bg-primary);
-    flex-direction: column;
     padding: var(--spacing-xl);
     box-shadow: var(--shadow-heavy);
-    transform: translateY(-100%);
+    z-index: 2000;
     opacity: 0;
     visibility: hidden;
+    transform: translateY(-100%);
     transition: all var(--transition-normal);
   }
-
   .nav-menu.active {
-    transform: translateY(0);
+    display: flex;
+    flex-direction: column;
     opacity: 1;
     visibility: visible;
+    transform: translateY(0);
   }
-
-  .nav-toggle {
+  .menu-btn {
     display: flex;
-  }
-
-  .nav-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-  }
-
-  .nav-toggle.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .nav-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
-  }
-
-  .section-title {
-    font-size: var(--font-size-2xl);
-  }
-
-  .footer-content {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .hero-buttons,
-  .about-buttons,
-  .error-buttons,
-  .contact-buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
-    padding: var(--spacing-md) 0;
-  }
-  .container {
-    padding: 0 var(--spacing-sm);
   }
 }
 
@@ -734,6 +758,36 @@ section {
     padding: var(--spacing-lg) 0;
   }
 }
+
+#main-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  margin-top: -80px; /* Compensate for body padding on hero section */
+  padding-top: 80px; /* Add padding back to hero content */
+}
+
+/* Force white text in hero sections regardless of theme */
+.hero .hero-content,
+.hero .hero-content *,
+.contact-hero .hero-content,
+.contact-hero .hero-content * {
+  color: #ffffff !important;
+}
+
+/* Ensure definition boxes in hero sections also stay white */
+.hero .definition-box,
+.hero .definition-box *,
+.contact-hero .definition-box,
+.contact-hero .definition-box * {
+  color: #ffffff !important;
+}
+
+.section {
+    padding: var(--spacing-lg) 0;
+  }
 
 #main-content {
   position: relative;

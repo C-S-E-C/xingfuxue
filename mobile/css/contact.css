@@ -66,11 +66,14 @@
   padding: var(--spacing-3xl) 0;
 }
 
+
 .contact-buttons {
   display: flex;
-  gap: var(--spacing-md);
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xl);
+  width: 100%;
+  padding: var(--spacing-md) 0;
 }
 
 .contact-btn {
@@ -80,6 +83,8 @@
   gap: var(--spacing-sm);
   padding: var(--spacing-xl);
   min-width: 250px;
+  width: 100%;
+  max-width: 400px;
 }
 
 .btn-subtitle {

@@ -13,3 +13,32 @@ if (!isMobile) {
 }
 }
 setInterval('test();', 1000);
+
+document.addEventListener('DOMContentLoaded', function() {
+  var menuBtn = document.getElementById('menu-btn');
+  var navMenu = document.getElementById('nav-menu');
+  if (menuBtn && navMenu) {
+    menuBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      // Toggle .active and set display based on class
+      if (navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        navMenu.style.display = 'none';
+      } else {
+        navMenu.classList.add('active');
+        navMenu.style.display = 'flex';
+      }
+    });
+    // Optional: close menu when clicking outside
+    document.addEventListener('click', function(e) {
+      if (
+        navMenu.classList.contains('active') &&
+        !navMenu.contains(e.target) &&
+        e.target !== menuBtn
+      ) {
+        navMenu.classList.remove('active');
+        navMenu.style.display = 'none';
+      }
+    });
+  }
+});
