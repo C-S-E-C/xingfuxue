@@ -188,23 +188,36 @@
   .article-card.featured {
     grid-template-columns: 1fr;
   }
-
   .articles-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-md);
   }
-
   .books-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-md);
   }
-
   .page-title {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
+  }
+  .article-image img,
+  .book-image img {
+    height: 140px;
   }
 }
 
 @media (max-width: 480px) {
   .books-grid {
     grid-template-columns: 1fr;
-    gap: var(--spacing-md);
+    gap: var(--spacing-xs);
+  }
+  .page-header {
+    padding: var(--spacing-md) 0 var(--spacing-sm);
+  }
+  .page-title {
+    font-size: var(--font-size-lg);
+  }
+  .article-content,
+  .book-content {
+    padding: var(--spacing-md);
   }
 }

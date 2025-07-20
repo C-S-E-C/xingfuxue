@@ -288,27 +288,43 @@
   .team-member.featured-member {
     grid-template-columns: 1fr;
   }
-
   .contact-details {
     grid-template-columns: 1fr;
+    gap: var(--spacing-md);
   }
-
   .contact-buttons {
     flex-direction: column;
     align-items: center;
+    gap: var(--spacing-md);
   }
-
   .team-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
   }
-
   .contact-hero .hero-title {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
+  }
+  .member-image img {
+    height: 140px;
   }
 }
 
 @media (max-width: 480px) {
   .team-grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-xs);
+  }
+  .org-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xs);
+  }
+  .contact-item {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-md);
+  }
+  .contact-btn {
+    min-width: 120px;
+    padding: var(--spacing-md);
   }
 }

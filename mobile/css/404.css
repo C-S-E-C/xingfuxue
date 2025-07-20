@@ -115,29 +115,42 @@
 /* Responsive Design for 404 */
 @media (max-width: 768px) {
   .error-number {
-    font-size: 6rem;
+    font-size: 3rem;
   }
 
   .error-title {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-lg);
   }
 
   .error-buttons {
     flex-direction: column;
     align-items: center;
+    gap: var(--spacing-xs);
   }
 
   .error-content {
-    padding: var(--spacing-2xl) var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-xs);
+  }
+
+  .error-quote,
+  .error-suggestions {
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    max-width: 100%;
   }
 }
 
 @media (max-width: 480px) {
   .error-number {
-    font-size: 4rem;
+    font-size: 2rem;
   }
 
   .error-title {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-base);
+  }
+
+  .error-description {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-md);
   }
 }
