@@ -281,7 +281,7 @@ h6 {
   background-clip: text;
   color: var(--text-primary);
   border-radius: 25px;
-  border: var(--text-primary) 5px solid;
+  /* border: var(--text-primary) 5px solid; */
   padding: var(--spacing-xs) var(--spacing-sm);
   background-color: var(--primary-color);
   color: var(--text-white);

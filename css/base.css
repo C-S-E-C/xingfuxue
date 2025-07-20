@@ -287,7 +287,7 @@ h6 {
   color: var(--text-primary);
   border-radius: 25px;
   line-height: 25px;
-  border: var(--text-primary) 5px solid;
+  /* border: var(--text-primary) 5px solid; */
   -webkit-text-fill-color: var(--text-primary);
 }
 
