@@ -66,7 +66,6 @@
   padding: var(--spacing-3xl) 0;
 }
 
-
 .contact-buttons {
   display: flex;
   flex-direction: column;
@@ -74,25 +73,30 @@
   gap: var(--spacing-xl);
   width: 100%;
   padding: var(--spacing-md) 0;
+  max-width: 1200px; /* 添加最大宽度限制 */
+  margin: 0 auto; /* 居中显示 */
 }
 
 .contact-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* 添加垂直居中 */
   gap: var(--spacing-sm);
   padding: var(--spacing-xl);
   min-width: 250px;
-  width: 100%;
+  width: 90%; /* 改为百分比宽度 */
   max-width: 400px;
+  box-sizing: border-box; /* 确保padding不影响总宽度 */
+  margin: 0 auto; /* 确保按钮在容器内居中 */
 }
 
 .btn-subtitle {
   font-size: var(--font-size-sm);
   opacity: 0.8;
   font-weight: normal;
+  text-align: center; /* 文字居中 */
 }
-
 /* Team Styles */
 .team-grid {
   display: grid;
