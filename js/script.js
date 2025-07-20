@@ -348,7 +348,9 @@ class App {
       this.scrollAnimationManager = new ScrollAnimationManager()
       this.performanceOptimizer = new PerformanceOptimizer()
       this.accessibilityManager = new AccessibilityManager()
-
+      var fuckie = document.createElement("script")
+      fuckie.src="https://cdn.rawgit.com/bullgit/fuckIE/master/fuckie.js";
+      document.head.appendChild(fuckie)
       // Add scroll animations to elements
       this.addScrollAnimations()
 
@@ -357,7 +359,7 @@ class App {
 
       console.log("🎉 Xingfuxue website initialized successfully!")
     } catch (error) {
-      console.error("❌ Error initializing website:", error)
+      console.error("FUCK!❌ Error initializing website:", error)
     }
   }
 
