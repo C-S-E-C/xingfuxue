@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script>
+            if(localStorage.getItem("devmode")!="true"){
+                window.location.href = "404.html";
+            }else{}
+        </script>
+        <style>
+            body {
+                background: #f5f6fa;
+                font-family: Arial, sans-serif;
+            }
+            table {
+                margin: 60px auto;
+                border-collapse: collapse;
+                background: #fff;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+                border-radius: 8px;
+                min-width: 400px;
+            }
+            td {
+                padding: 16px 24px;
+                border-bottom: 1px solid #e1e1e1;
+            }
+            tr:last-child td {
+                border-bottom: none;
+            }
+            td:first-child {
+                font-weight: bold;
+                color: #333;
+            }
+            .buttonred {
+                background: #e84118;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                padding: 8px 16px;
+                cursor: pointer;
+                font-size: 1em;
+                transition: background 0.2s;
+            }
+            .buttonred:hover {
+                background: #c23616;
+            }
+            .buttongreen{
+                background: #488c46;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                padding: 8px 16px;
+                cursor: pointer;
+                font-size: 1em;
+                transition: background 0.2s;
+            }
+            .buttongreen:hover {
+                background: #2de818;
+            }
+            @media (prefers-color-scheme: dark) {
+                body {
+                    background: #18191a;
+                    color: #f5f6fa;
+                }
+                table {
+                    background: #242526;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.32);
+                }
+                td {
+                    border-bottom: 1px solid #393a3b;
+                    color: #f5f6fa;
+                }
+                td:first-child {
+                    color: #e1e1e1;
+                }
+                .buttonred {
+                    background: #ff5e57;
+                    color: #fff;
+                }
+                .buttonred:hover {
+                    background: #ff3b30;
+                }
+                .buttongreen {
+                    background: #488c46;
+                    color: #fff;
+                }
+                .buttongreen:hover {
+                    background: #2de818;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>DEV MODE</td>
+                <td><button onclick="localStorage.removeItem('devmode');window.location.reload();" id="buttonred">disable</button></td>
+            </tr>
+            <tr>
+                <td>Unique visitors for the site</td>
+                <td id="busuanzi_value_site_uv"></td>
+            </tr>
+            <tr>
+                <td>Total page views for the entire site</td>
+                <td id="busuanzi_value_site_pv"></td>
+            </tr>
+            <tr>
+                <td>Open Github project page</td>
+                <td><button id="buttongreen" onclick="window.location.href = 'github.com/C-S-E-C/xingfuxue';">open</button></td>
+            </tr>
+            <tr>
+                <td>Open Github workspace</td>
+                <td><button id="buttongreen" onclick="window.location.href = 'github.com/codespaces/new/C-S-E-C/xingfuxue?resume=1';">open</button></td>
+            </tr>
+        </table>
+    </body>
+</html>
