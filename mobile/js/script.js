@@ -1,3 +1,33 @@
+async function sha512(message) {
+            try {
+                // 将消息编码为UTF-8
+                const msgBuffer = new TextEncoder().encode(message);
+                
+                // 计算哈希值
+                const hashBuffer = await crypto.subtle.digest('SHA-512', msgBuffer);
+                
+                // 将ArrayBuffer转换为十六进制字符串
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+                
+                return hashHex;
+            } catch (error) {
+                console.error('哈希计算失败:', error);
+                throw error;
+            }
+        }
+let devstarttimes = 0;
+async function startdev() {
+  devstarttimes = devstarttimes + 1; // 增加 devstarttimes 的值
+  if (devstarttimes > 5) { // 如果 devstarttimes 超过 5
+    var konami = prompt(""); // 弹出提示框，要求用户输入内容
+    konami = await sha512(konami); // 使用 sha512 函数对输入进行哈希处理
+    if (konami=="826c52cfbad8f1ffe1b6983a6030b7be1d02148dcf32c0d4ad63bb380ef85f5543f06c1bef6855e18ac3ac976808fa3dda8045b0a7c78c1d2dec7e030619312a"){
+      localStorage.setItem("devmode","true")
+      window.location.href="dev.html";
+    }
+  }
+}
 // Theme Management
 class ThemeManager {
   constructor() {
@@ -356,7 +386,9 @@ class App {
 
       // Initialize custom interactions
       this.initializeCustomInteractions()
-
+      var busuanzi = document.createElement("div")
+      busuanzi.innerHTML='<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>';
+      document.head.appendChild(busuanzi)
       console.log("🎉 Xingfuxue website initialized successfully!")
     } catch (error) {
       console.error("FUCK! ❌ Error initializing website:", error)

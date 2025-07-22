@@ -379,9 +379,9 @@ class App {
       this.scrollAnimationManager = new ScrollAnimationManager()
       this.performanceOptimizer = new PerformanceOptimizer()
       this.accessibilityManager = new AccessibilityManager()
-      var fuckie = document.createElement("script")
-      fuckie.src="https://cdn.rawgit.com/bullgit/fuckIE/master/fuckie.js";
-      document.head.appendChild(fuckie)
+      var busuanzi = document.createElement("div")
+      busuanzi.innerHTML='<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>';
+      document.head.appendChild(busuanzi)
       // Add scroll animations to elements
       this.addScrollAnimations()
 
