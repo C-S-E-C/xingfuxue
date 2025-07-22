@@ -16,14 +16,16 @@ async function sha512(message) {
                 throw error;
             }
         }
-async function startdev(){
-  devstarttimes = devstarttimes + 1;
-  if (devstarttimes>5){
-    var konami = prompt("");
-    konami = await sha512(konami);
-    alert(konami);
+let devstarttimes = 0;
+async function startdev() {
+  devstarttimes = devstarttimes + 1; // 增加 devstarttimes 的值
+  if (devstarttimes > 5) { // 如果 devstarttimes 超过 5
+    var konami = prompt(""); // 弹出提示框，要求用户输入内容
+    konami = await sha512(konami); // 使用 sha512 函数对输入进行哈希处理
+    alert(konami); // 弹出包含哈希结果的警告框
   }
 }
+
 // Theme Management
 class ThemeManager {
   constructor() {
@@ -382,7 +384,6 @@ class App {
 
       // Initialize custom interactions
       this.initializeCustomInteractions()
-      var devstarttimes = 0;
       console.log("🎉 Xingfuxue website initialized successfully!")
     } catch (error) {
       console.error("FUCK!❌ Error initializing website:", error)
