@@ -31,7 +31,7 @@
                 font-weight: bold;
                 color: #333;
             }
-            button {
+            .buttonred {
                 background: #e84118;
                 color: #fff;
                 border: none;
@@ -41,8 +41,21 @@
                 font-size: 1em;
                 transition: background 0.2s;
             }
-            button:hover {
+            .buttonred:hover {
                 background: #c23616;
+            }
+            .buttongreen{
+                background: #488c46;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                padding: 8px 16px;
+                cursor: pointer;
+                font-size: 1em;
+                transition: background 0.2s;
+            }
+            .buttongreen:hover {
+                background: #2de818;
             }
             @media (prefers-color-scheme: dark) {
                 body {
@@ -60,12 +73,19 @@
                 td:first-child {
                     color: #e1e1e1;
                 }
-                button {
+                .buttonred {
                     background: #ff5e57;
                     color: #fff;
                 }
-                button:hover {
+                .buttonred:hover {
                     background: #ff3b30;
+                }
+                .buttongreen {
+                    background: #488c46;
+                    color: #fff;
+                }
+                .buttongreen:hover {
+                    background: #2de818;
                 }
             }
         </style>
@@ -74,7 +94,7 @@
         <table>
             <tr>
                 <td>DEV MODE</td>
-                <td><button onclick="localStorage.removeItem('devmode');window.location.reload();">disable</button></td>
+                <td><button onclick="localStorage.removeItem('devmode');window.location.reload();" id="buttonred">disable</button></td>
             </tr>
             <tr>
                 <td>Unique visitors for the site</td>
@@ -83,6 +103,14 @@
             <tr>
                 <td>Total page views for the entire site</td>
                 <td id="busuanzi_value_site_pv"></td>
+            </tr>
+            <tr>
+                <td>Open Github project page</td>
+                <td><button id="buttongreen" onclick="window.location.href = 'github.com/C-S-E-C/xingfuxue';">open</button></td>
+            </tr>
+            <tr>
+                <td>Open Github workspace</td>
+                <td><button id="buttongreen" onclick="window.location.href = 'github.com/codespaces/new/C-S-E-C/xingfuxue?resume=1';">open</button></td>
             </tr>
         </table>
     </body>
