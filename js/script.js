@@ -1,3 +1,29 @@
+async function sha512(message) {
+            try {
+                // 将消息编码为UTF-8
+                const msgBuffer = new TextEncoder().encode(message);
+                
+                // 计算哈希值
+                const hashBuffer = await crypto.subtle.digest('SHA-512', msgBuffer);
+                
+                // 将ArrayBuffer转换为十六进制字符串
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+                
+                return hashHex;
+            } catch (error) {
+                console.error('哈希计算失败:', error);
+                throw error;
+            }
+        }
+async function startdev(){
+  devstarttimes = devstarttimes + 1;
+  if (devstarttimes>5){
+    var konami = prompt("");
+    konami = await sha512(konami);
+    alert(konami);
+  }
+}
 // Theme Management
 class ThemeManager {
   constructor() {
@@ -354,7 +380,7 @@ class App {
 
       // Initialize custom interactions
       this.initializeCustomInteractions()
-
+      var devstarttimes = 0;
       console.log("🎉 Xingfuxue website initialized successfully!")
     } catch (error) {
       console.error("❌ Error initializing website:", error)
