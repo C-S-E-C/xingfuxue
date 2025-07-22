@@ -8,6 +8,19 @@
         </script>
     </head>
     <body>
-        
+        <table>
+            <tr>
+                <td>DEV MODE</td>
+                <td><button onclick="localStorage.removeItem('devmode');window.location.reload();">disable</button></td>
+            </tr>
+            <tr>
+                <td>Unique visitors for the site</td>
+                <td id="busuanzi_value_site_uv"></td>
+            </tr>
+            <tr>
+                <td>Total page views for the entire site</td>
+                <td id="busuanzi_value_site_pv"></td>
+            </tr>
+        </table>
     </body>
 </html>
