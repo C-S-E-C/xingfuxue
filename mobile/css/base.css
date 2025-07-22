@@ -266,6 +266,8 @@ h6 {
 
 .brand-link {
   text-decoration: none;
+  left:10px;
+  position: absolute;
 }
 
 .brand-main {
@@ -277,11 +279,13 @@ h6 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: var(--text-primary);
+  border-radius: 25px;
+  /* border: var(--text-primary) 5px solid; */
   padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: 8px;
   background-color: var(--primary-color);
   color: var(--text-white);
-  -webkit-text-fill-color: var(--text-white);
+  -webkit-text-fill-color: var(--text-primary);
 }
 
 .nav-menu {
