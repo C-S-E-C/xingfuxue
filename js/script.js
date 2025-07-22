@@ -22,7 +22,7 @@ async function startdev() {
   if (devstarttimes > 5) { // 如果 devstarttimes 超过 5
     var konami = prompt(""); // 弹出提示框，要求用户输入内容
     konami = await sha512(konami); // 使用 sha512 函数对输入进行哈希处理
-    alert(konami); // 弹出包含哈希结果的警告框
+    console.log(konami); // 弹出包含哈希结果的警告框
   }
 }
 
