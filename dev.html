@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<!-- get ou pls -->
-<html>
-    <head>
         <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
         <script>
-            if(localStorage.getItem("devmode")!="true"){
-                window.location.href = "404.html";
-            }
             function getstat(){
                 fetch('https://www.githubstatus.com/api/v2/summary.json')
                     .then(response => response.json())
@@ -110,8 +103,6 @@
                 }
             }
         </style>
-    </head>
-    <body>
         <table>
             <tr>
                 <td>DEV MODE</td>
@@ -153,5 +144,3 @@
                 <td id="workspace_stat"></td>
             </tr>
         </table>
-    </body>
-</html>
