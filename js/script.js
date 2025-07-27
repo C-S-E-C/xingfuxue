@@ -27,7 +27,7 @@ async function startdev() {
       fetch("dev.html")
       .then(response => response.text())
       .then(data => {
-        pip.window.document.body = data; // 将获取的 HTML 内容设置为 pip 窗口的内容
+        pip.window.document.body.innerHTML = data;
         pip.window.document.title = "Xingfuxue Dev Mode";
       })
     }
