@@ -23,7 +23,7 @@ async function startdev() {
     var konami = prompt(""); // 弹出提示框，要求用户输入内容
     konami = await sha512(konami); // 使用 sha512 函数对输入进行哈希处理
     if (konami=="826c52cfbad8f1ffe1b6983a6030b7be1d02148dcf32c0d4ad63bb380ef85f5543f06c1bef6855e18ac3ac976808fa3dda8045b0a7c78c1d2dec7e030619312a"){
-      pip = await window.documentPictureInPicture.requestWindow();
+      pip = await window.documentPictureInPicture.requestWindow({height: 200, width: 400, title: "Xingfuxue Dev Mode"});
       fetch("dev.html")
       .then(response => response.text())
       .then(data => {
