@@ -1,18 +1,17 @@
 barba.init({
   transitions: [{
-    name: 'default-transition',
+    name: 'fade',
     leave(data) {
-      // create your stunning leave animation here
+      // 返回 GSAP 动画（自动返回 Promise）
       return gsap.to(data.current.container, {
         opacity: 0,
-        duration: 0.3
+        duration: 0.5 // 明确设置持续时间
       });
     },
     enter(data) {
-      // create your amazing enter animation here
-      return gsap.to(data.next.container, {
+      return gsap.from(data.next.container, {
         opacity: 0,
-        duration: 0.3
+        duration: 0.5
       });
     }
   }]
