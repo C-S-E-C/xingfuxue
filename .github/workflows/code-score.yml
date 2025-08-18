@@ -26,3 +26,8 @@ jobs:
          with:
            name: score
            path: score.txt
+       - name: commit score
+         uses: stefanzweifel/git-auto-commit-action@v6
+         with:
+           commit_message: "commit shit-code-score"
+           branch: main
