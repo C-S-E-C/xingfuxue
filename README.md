@@ -1,6 +1,8 @@
 # xingfuxue
 This project is for Xyktl's grandpa.
 <br><b>Made by Ianchzhu & Xyktl</b></br>
+![GitHub last commit](https://img.shields.io/github/last-commit/C-S-E-C/xingfuxue)
+
 <br>https://xingfuxue.csec.top/</br>
 <br>This is the website👆（网站主体👆）</br>
 <br>This website is sponsered by </br>
