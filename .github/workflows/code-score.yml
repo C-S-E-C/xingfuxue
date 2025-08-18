@@ -30,6 +30,7 @@ jobs:
        - name: getscore
          run: |
           fuck-u-code analyze -s .
+         shell: bash
        - name: commit score
          uses: stefanzweifel/git-auto-commit-action@v6
          with:
