@@ -29,9 +29,7 @@ jobs:
            path: score.txt
        - name: getscore
          run: |
-          SECOND_LAST_LINE=$(tail -n 2 score.txt | head -n 1)
-          SCORE=$(echo "$SECOND_LAST_LINE" | awk -F':' '{print $2}' | xargs)
-          echo "score: ${SCORE}" > package.yaml
+          fuck-u-code analyze -s .
        - name: commit score
          uses: stefanzweifel/git-auto-commit-action@v6
          with:
