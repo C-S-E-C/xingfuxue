@@ -18,9 +18,8 @@ jobs:
        - name: "Scan package(s)"
          run: |
           export PATH="$PATH:$(go env GOPATH)/bin"
-          fuck-u-code analyze --verbose .
-          echo fuck-u-code analyze --verbose . > score.txt
-          echo ls 
+          fuck-u-code analyze --verbose . > score.txt
+          ls 
          shell: bash
        - name: upload result
          uses: actions/upload-artifact@v4
