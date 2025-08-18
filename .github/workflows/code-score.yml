@@ -48,3 +48,4 @@ jobs:
         with:
           commit_message: "Update code quality score"
           branch: main
+          commit_user_name: shit-code-score
