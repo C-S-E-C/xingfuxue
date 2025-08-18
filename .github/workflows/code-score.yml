@@ -34,13 +34,18 @@ jobs:
           name: score
           path: score.txt
           
-      - name: Get score
+      - name: getscore
         run: |
           export PATH="$PATH:$(go env GOPATH)/bin"
-          fuck-u-code analyze -s .
+          OUTPUT=$(fuck-u-code analyze -s .)
+          LINE=$(echo "$OUTPUT" | tail -n 6 | head -n 1)
+          SCORE=$(echo "$LINE" | awk -F':' '{print $2}' | awk -F'-' '{print $1}' | xargs)
+          echo "score: $SCORE" > package.yaml
+          echo "Extracted score: $SCORE"
+          cat package.yaml
           
-      - name: Commit score
+      - name: commit score
         uses: stefanzweifel/git-auto-commit-action@v6
         with:
-          commit_message: "commit shit-code-score"
+          commit_message: "Update code quality score"
           branch: main
