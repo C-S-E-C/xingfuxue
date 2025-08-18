@@ -36,12 +36,11 @@ jobs:
           
       - name: getscore
         run: |
-          export PATH="$PATH:$(go env GOPATH)/bin"
           OUTPUT=$(fuck-u-code analyze -s .)
-          LINE=$(echo "$OUTPUT" | tail -n 6 | head -n 1)
-          SCORE=$(echo "$LINE" | awk -F':' '{print $2}' | awk -F'-' '{print $1}' | xargs)
+          SCORE_LINE=$(echo "$OUTPUT" | grep "总体评分:")
+          SCORE=$(echo "$SCORE_LINE" | awk -F':' '{print $2}' | awk '{print $1}' | tr -d '/100')
           echo "score: $SCORE" > package.yaml
-          echo "Extracted score: $SCORE"
+          echo "提取的分数: $SCORE"
           cat package.yaml
           
       - name: commit score
