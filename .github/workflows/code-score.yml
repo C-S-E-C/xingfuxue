@@ -16,18 +16,5 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-      - name: install wrangler
-        run: npm install --save-dev wrangler@4
-        shell: bash
-      - name: Scaning
+      - name: Dynamic fuck-u-code Badge connected with GitHub Artifact
         uses: YaoYinYing/fuck-u-code-github-action@v1.1.0
-        with:
-          target-path: .
-          reverse-score: "true"
-          badge-text: fuck--u--code score
-          badge-file-name: fuck-u-code_scan
-          badge-logo-id: python
-          badge-artifact-name: upload-my-awesome-badge-${{ github.run_id }}
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          R2_BUCKET: ${{ secrets.R2_BUCKET }}
-          R2_badge_path: badge_dir_with_uniq_name/<project-name>/fuck-u-code
