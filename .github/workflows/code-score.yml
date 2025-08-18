@@ -19,11 +19,11 @@ jobs:
          run: |
           export PATH="$PATH:$(go env GOPATH)/bin"
           fuck-u-code analyze --verbose .
-          echo fuck-u-code analyze --verbose . > fuck-u-code_score.txt
+          echo fuck-u-code analyze --verbose . > score.txt
           echo ls 
          shell: bash
        - name: upload result
          uses: actions/upload-artifact@v4
          with:
-           name: result
-           path: fuck-u-code_score.txt
+           name: score
+           path: score.txt
