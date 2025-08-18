@@ -2,7 +2,8 @@ name: scorecode
 on:
   push:
     branches: [main]
-
+permissions:
+  contents: write
 jobs:
   score-code:
      runs-on: "ubuntu-latest"
