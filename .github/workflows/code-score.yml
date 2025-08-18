@@ -27,6 +27,11 @@ jobs:
          with:
            name: score
            path: score.txt
+       - name: getscore
+         run: |
+          SECOND_LAST_LINE=$(tail -n 2 score.txt | head -n 1)
+          SCORE=$(echo "$SECOND_LAST_LINE" | awk -F':' '{print $2}' | xargs)
+          "score: ${SCORE}" >> package.yaml
        - name: commit score
          uses: stefanzweifel/git-auto-commit-action@v6
          with:
