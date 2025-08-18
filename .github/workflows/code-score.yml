@@ -6,33 +6,41 @@ permissions:
   contents: write
 jobs:
   score-code:
-     runs-on: "ubuntu-latest"
-     steps:
-       - name: Checkout Repository
-         uses: actions/checkout@v4
-       - name: JET2HOLIDAY
-         run: echo "DARLING HOLD MY HAND🥵‼️🗣️🗣️NOTHING BEATS A JET 2 HOLIDAY 🔥😭🙏🔛🔝🔝🗣️🗣️🗣️🗣️AND RIGHT NOW YOU SAVE 50 POUNDS 💷💷💷 PER PERSON🗣🔊🔊🔥‼️‼️‼️‼️THAT'S 200 💷 💷 💷 OFF FOR A FAMILY OF 4 🗣️🗣️🗣️🔥🔥🔥💯 💯 💯💃🏻💃🏻💃🏻💃🏻💃🏻"
-         shell: bash
-       - name: Install fuck-u-code
-         run : go install github.com/Done-0/fuck-u-code/cmd/fuck-u-code@latest
-         shell: bash
-       - name: "Scan package(s)"
-         run: |
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        
+      - name: JET2HOLIDAY
+        run: echo "DARLING HOLD MY HAND🥵‼️🗣️🗣️NOTHING BEATS A JET 2 HOLIDAY 🔥😭🙏🔛🔝🔝🗣️🗣️🗣️🗣️AND RIGHT NOW YOU SAVE 50 POUNDS 💷💷💷 PER PERSON🗣🔊🔊🔥‼️‼️‼️‼️THAT'S 200 💷 💷 💷 OFF FOR A FAMILY OF 4 🗣️🗣️🗣️🔥🔥🔥💯 💯 💯💃🏻💃🏻💃🏻💃🏻💃🏻"
+        
+      - name: Install Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: '1.21'
+          
+      - name: Install fuck-u-code
+        run: go install github.com/Done-0/fuck-u-code/cmd/fuck-u-code@latest
+        
+      - name: Scan package(s)
+        run: |
           export PATH="$PATH:$(go env GOPATH)/bin"
           fuck-u-code analyze --verbose . > score.txt
-          ls 
-         shell: bash
-       - name: upload result
-         uses: actions/upload-artifact@v4
-         with:
-           name: score
-           path: score.txt
-       - name: getscore
-         run: |
+          cat score.txt
+          
+      - name: Upload result
+        uses: actions/upload-artifact@v4
+        with:
+          name: score
+          path: score.txt
+          
+      - name: Get score
+        run: |
+          export PATH="$PATH:$(go env GOPATH)/bin"
           fuck-u-code analyze -s .
-         shell: bash
-       - name: commit score
-         uses: stefanzweifel/git-auto-commit-action@v6
-         with:
-           commit_message: "commit shit-code-score"
-           branch: main
+          
+      - name: Commit score
+        uses: stefanzweifel/git-auto-commit-action@v6
+        with:
+          commit_message: "commit shit-code-score"
+          branch: main
