@@ -2,6 +2,8 @@
 This project is for Xyktl's grandpa.
 <br><b>Made by Ianchzhu & Xyktl</b></br>
 ![GitHub last commit](https://img.shields.io/github/last-commit/C-S-E-C/xingfuxue)
+![Dynamic YAML Badge](https://img.shields.io/badge/dynamic/yaml?url=https%3A%2F%2Fraw.githubusercontent.com%2FC-S-E-C%2Fxingfuxue%2Frefs%2Fheads%2Fmain%2Fpackage.yaml&query=score)
+
 
 <br>https://xingfuxue.csec.top/</br>
 <br>This is the website👆（网站主体👆）</br>
