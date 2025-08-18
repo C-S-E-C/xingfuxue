@@ -16,7 +16,9 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
-
+      - name: install wrangler
+        run: npm install --save-dev wrangler@4
+        shell: bash
       - name: Scaning
         uses: YaoYinYing/fuck-u-code-github-action@v1.1.0
         with:
