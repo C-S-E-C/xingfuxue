@@ -20,5 +20,5 @@ jobs:
           export PATH="$PATH:$(go env GOPATH)/bin"
           fuck-u-code analyze --verbose .
           echo fuck-u-code analyze --verbose . > fuck-u-code_score.txt
-          ls 
+          echo ls 
          shell: bash
