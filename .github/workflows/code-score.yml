@@ -1,20 +1,24 @@
-name: Fuck U Code Scan
-
+name: scorecode
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
-  release:
-    types: [created]
-  workflow_dispatch:
 
 jobs:
-  scan-code:
-    runs-on: "ubuntu-latest"
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-      - name: Dynamic fuck-u-code Badge connected with GitHub Artifact
-        uses: YaoYinYing/fuck-u-code-github-action@v1.1.0
+  score-code:
+     runs-on: "ubuntu-latest"
+     steps:
+       - name: Checkout Repository
+         uses: actions/checkout@v4
+       - name: JET2HOLIDAY
+         run: echo "DARLING HOLD MY HAND🥵‼️🗣️🗣️NOTHING BEATS A JET 2 HOLIDAY 🔥😭🙏🔛🔝🔝🗣️🗣️🗣️🗣️AND RIGHT NOW YOU SAVE 50 POUNDS 💷💷💷 PER PERSON🗣🔊🔊🔥‼️‼️‼️‼️THAT'S 200 💷 💷 💷 OFF FOR A FAMILY OF 4 🗣️🗣️🗣️🔥🔥🔥💯 💯 💯💃🏻💃🏻💃🏻💃🏻💃🏻"
+         shell: bash
+       - name: Install fuck-u-code
+         run : go install github.com/Done-0/fuck-u-code/cmd/fuck-u-code@latest
+         shell: bash
+       - name: "Scan package(s)"
+         run: |
+          export PATH="$PATH:$(go env GOPATH)/bin"
+          fuck-u-code analyze --verbose .
+          echo fuck-u-code analyze --verbose . > fuck-u-code_score.txt
+          ls 
+         shell: bash
